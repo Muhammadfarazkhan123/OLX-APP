@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>RUSHFT's Mart</title>
+    <link rel="shortcut icon" href="../pics/Shopping-Cart-PNG-Image-84606.png" type="image/x-icon">
+
+    <link rel="stylesheet" href="../css/style.css">
+
+
+    <!-- Font Awesome -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+<!-- Bootstrap core CSS -->
+<link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet">
+<!-- Material Design Bootstrap -->
+<link href="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.5.4/css/mdb.min.css" rel="stylesheet">
+
+
+</head>
+<body class="reg">
+        <p id="eror" style="text-align:center;color:red"></p>
+    
+    <div class="signup">
+
+        <!-- Material form register -->
+<form>
+    <h1 class="h1 text-center mb-4 head">SIGN UP</h1>
+
+    <!-- Material input text -->
+    <div class="md-form">
+        <i class="fa fa-user prefix grey-text"></i>
+        <input type="text" required="required" id="materialFormRegisterNameEx" name="fname" class="form-control fname">
+        <label for="materialFormRegisterNameEx">First Name</label>
+    </div>
+
+    <!-- Material input email -->
+    <div class="md-form">
+        <i class="fa fa-user prefix grey-text"></i>
+       
+        <input type="text" required="required" id="materialFormRegisterEmailEx" id="lname" name="lname" class="form-control lname">
+        <label for="materialFormRegisterEmailEx">Last Name</label>
+    </div>
+
+    <!-- Material input email -->
+    <div class="md-form">
+        <i class="fa fa-envelope prefix grey-text"></i>
+        <input type="email" required="required" id="materialFormRegisterConfirmEx" id="email" name="email" class="form-control email">
+        <label for="materialFormRegisterConfirmEx">your email</label>
+    </div>
+
+    <!-- Material input password -->
+    <div class="md-form">
+        <i class="fa fa-lock prefix grey-text"></i>
+        <input type="password" required="required" id="materialFormRegisterPasswordEx" name="pass" id="pass" class="form-control pass">
+        <label for="materialFormRegisterPasswordEx">Your password</label>
+    </div>
+
+    <div class="text-center mt-4">
+        <button type="button" onclick="signup()" class="btn btn-primary">REGISTER</button>
+    </div>
+</form>
+<!-- Material form register -->
+
+    </div>
+
+
+
+
+
+<!-- JQuery -->
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<!-- Bootstrap tooltips -->
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.13.0/umd/popper.min.js"></script>
+<!-- Bootstrap core JavaScript -->
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0/js/bootstrap.min.js"></script>
+<!-- MDB core JavaScript -->
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.5.4/js/mdb.min.js"></script>
+
+<script src="https://www.gstatic.com/firebasejs/5.0.4/firebase.js"></script>
+
+<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+
+    <script src="../script/app.js"></script>
+</body>
+</html>

@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>RUSHFT's Mart</title>
+    <link rel="stylesheet" href="./css/style.css">
+    <link rel="manifest" href="./manifest.json">
+    <link rel="shortcut icon" href="./pics/Shopping-Cart-PNG-Image-84606.png" type="image/x-icon">
+
+    
+
+    <!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+
+<!-- jQuery library -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+<!-- Latest compiled JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <!-- Bootstrap core CSS -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Material Design Bootstrap -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.5.4/css/mdb.min.css" rel="stylesheet">
+
+
+    
+</head>
+<body onload="adds()">
+
+
+
+        <nav class="navbar navbar-expand-lg navbar-dark primary-color nav">
+
+                <div class="head1">
+                     <p><a href=""> RUSHFT'S Mart</a> <span><img src="./pics/Shopping-Cart-PNG-Image-84606.png" alt=""></span></p>
+                    </div>
+
+                    <!-- <a href="./index.html" class="home">HOME</a> -->
+        
+                <div class="md-form my-0 search">
+                                        <input class="form-control mr-sm-2" type="text" onkeyup="search()" placeholder="Search" id="search" aria-label="Search">
+                                    </div>
+                                    
+                                    
+                                    <div class="butn">
+                                        <button onclick="addpost()" class="btn btn-secondary"><span class="glyphicon glyphicon-upload"></span> Upload ADD</button>
+                                    </div>
+                                    
+                                    
+                                    <div class="butnn" id="butnn">
+                                        
+                                        <button onclick="fav()" class="btn btn-secondary"><span class="glyphicon glyphicon-heart"></span> Favourites</button>
+                                    </div>
+                                    
+                                    <li class="nav-item dropdown show drop">
+                                            <a class="nav-link dropdown-toggle waves-effect waves-light" id="navbarDropdownMenuLink-4" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+                                                <i class="fa fa-user"></i> Profile </a>
+                                            <div class="dropdown-menu dropdown-menu-right dropdown-info" aria-labelledby="navbarDropdownMenuLink-4">
+                                                <a class="dropdown-item waves-effect waves-light" href="#">My account</a>
+                                                <a class="dropdown-item waves-effect waves-light" id="chat"  href="./pages/chats.html">Chats</a>
+
+                                           <a class="dropdown-item waves-effect waves-light"onclick="signout()" id="logout" href="#">Log out</a>
+                                              <a class="dropdown-item waves-effect waves-light" id="login"  href="./pages/login.html">Log in</a>
+                                                
+                                            </div>
+                                        </li>
+                                </div>
+            </nav>
+
+        
+       
+       
+       
+     
+
+      <div class="form-group select" >
+        <label for="sel1">Categories:</label>
+        <select class="form-control" id="category">
+          
+          <option>mobile</option>
+          <option>fashion clothes</option>
+          <option>shoes</option>
+          <option>bedroom luxury</option>
+          <option>kitchen luxury</option>
+          <option> boys fashion wear</option>
+          <option>bikes</option>
+          <option>homes</option>
+          <option>furniture</option>
+          <option>Others</option>
+        </select>
+    </div>
+       
+    
+ 
+   
+    
+    <div class="head">
+
+           <div class="mainadds" id="ads"> </div>
+
+           
+        </div>
+
+        <div class="mainadds" id="set"> </div>
+           
+        <div class="mainadds" id="fav"> </div>
+            
+           
+     
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <script>
+        if ('serviceWorker' in navigator) {
+    window.addEventListener('load', function() {
+      navigator.serviceWorker.register('../serviceworker.js').then(function(registration) {
+        // Registration was successful
+        
+        firebase.messaging().useServiceWorker(registration);
+        
+        
+  firebase.auth().onAuthStateChanged(function(user) {
+    if (user) {
+        
+            function saveMessagingDeviceToken(){
+      
+       firebase.messaging().getToken().then(function(currentToken) {
+      if (currentToken) {
+        console.log('Got FCM device token:', currentToken);
+        // Saving the Device Token to the datastore.
+        firebase.database().ref("/fcmTokens").child(currentToken)
+            .set(firebase.auth().currentUser.uid);
+      } else {
+        // Need to request permissions to show notifications.
+        requestforpermision()
+      }
+    }).catch(function(error){
+      console.error('Unable to get messaging token.', error);
+    });
+      }//Savetoken ends here
+      
+      
+       function requestforpermision(){
+       firebase.messaging().requestPermission().then(function() {
+      // Notification permission granted.
+      saveMessagingDeviceToken();
+    }).catch(function(error) {
+      console.error('Unable to get permission to notify.', error);
+      
+      
+      alert("Your Notifications Are Disabled")
+    });
+      
+      }//Req Permisison ends here
+      requestforpermision()
+    } });
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+        console.log('ServiceWorker registration successful with scope: ', registration.scope);
+      }, function(err) {
+        // registration failed :(
+        console.log('ServiceWorker registration failed: ', err);
+      });
+    });
+  }
+    </script>
+
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<!-- Bootstrap tooltips -->
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.13.0/umd/popper.min.js"></script>
+<!-- Bootstrap core JavaScript -->
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0/js/bootstrap.min.js"></script>
+<!-- MDB core JavaScript -->
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.5.4/js/mdb.min.js"></script>
+
+
+<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+
+    <script src="https://www.gstatic.com/firebasejs/5.0.4/firebase.js"></script>
+    <script type="text/javascript" src="js/mdb.min.js"></script>
+    <script src="./script/localforage.min.js"></script>
+    <script src="./script/add.js"></script>
+  
+    
+
+</body>
+</html>

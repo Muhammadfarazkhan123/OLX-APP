@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>RUSHFT's Mart</title>
+    <link rel="shortcut icon" href="../pics/Shopping-Cart-PNG-Image-84606.png" type="image/x-icon">
+
+    <link rel="stylesheet" href="../css/style.css">
+
+
+    <!-- Font Awesome -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+<!-- Bootstrap core CSS -->
+<link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet">
+<!-- Material Design Bootstrap -->
+<link href="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.5.4/css/mdb.min.css" rel="stylesheet">
+</head>
+<body class="add">
+    
+<!-- Material form contact -->
+
+<p id="eror1" style="text-align:center;color:red"></p>
+
+<div class="adds">
+<form>
+    <p class="h1 text-center mb-4">ADD your Ads</p>
+
+    <!-- Material input text -->
+    <div class="md-form">
+        <i class="fa fa-user prefix grey-text"></i>
+        <input type="text" id="materialFormContactNameEx" class="form-control fullname">
+        <label for="materialFormContactNameEx">Your name</label>
+    </div>
+
+    <!-- Material input email -->
+    <div class="form-group">
+        <label for="sel1">Title of your ADS:</label>
+        <select class="form-control" id="sel1" class="title">
+          <option>mobile</option>
+          <option>fashion clothes</option>
+          <option>shoes</option>
+          <option>bedroom luxury</option>
+          <option>kitchen luxury</option>
+          <option> boys fashion wear</option>
+          <option>bikes</option>
+          <option>homes</option>
+          <option>furniture</option>
+          <option>Others</option>
+        </select>
+    
+
+    <!-- Material input subject -->
+    <div class="md-form">
+        <i class="fa fa-tag prefix grey-text"></i>
+        <input type="text" required="required" id="materialFormContactSubjectEx" class="form-control model">
+        <label for="materialFormContactSubjectEx">Model</label>
+    </div>
+
+
+    <div class="md-form">
+        <i class="fa fa-tag prefix grey-text"></i>
+        <input type="text" required="required" id="materialFormContactSubjectEx" class="form-control price">
+        <label for="materialFormContactSubjectEx">price</label>
+    </div>
+
+    <div class="md-form">
+        <i class="fa fa-tag prefix grey-text"></i>
+        <input type="text" required="required" id="materialFormContactSubjectEx" class="form-control contact">
+        <label for="materialFormContactSubjectEx">contact no #</label>
+    </div>
+
+
+    <!-- Material textarea message -->
+    <div class="md-form">
+        <i class="fa fa-pencil prefix grey-text"></i>
+        <textarea type="text" required="required" id="materialFormContactMessageEx" class="form-control md-textarea Description" rows="3"></textarea>
+        <label for="materialFormContactMessageEx">Description</label>
+    </div>
+
+
+
+    <div class="file-field">
+        <div class="btn btn-outline-info waves-effect btn-sm float-left one">
+            <span>Choose a picture of your ads</span>
+            <input type="file" id="file" class="file">
+        </div>
+        
+    </div>
+
+    <progress value="0" max="100" id="uploader">0%</progress>
+
+
+    <div class="text-center mt-4">
+        <button class="btn btn-outline-secondary" onclick="postMyAd()" type="button">Upload<i class="fa fa-paper-plane-o ml-2"></i></button>
+    </div>
+</form>
+
+</div>
+<!-- Material form contact -->
+
+
+
+
+
+
+
+    <!-- JQuery -->
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<!-- Bootstrap tooltips -->
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.13.0/umd/popper.min.js"></script>
+<!-- Bootstrap core JavaScript -->
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0/js/bootstrap.min.js"></script>
+<!-- MDB core JavaScript -->
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.5.4/js/mdb.min.js"></script>
+
+
+<script src="https://www.gstatic.com/firebasejs/5.0.4/firebase.js"></script>
+
+<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+
+    <script src="../script/app.js"></script>
+</body>
+</html>
